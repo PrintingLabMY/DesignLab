@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Disallow seach engine robots to index this page -->
   <meta name="robots" content="NOINDEX, NOFOLLOW">
 
   <link rel="shortcut icon" type="image/x-icon" href="https://static.printinglab.my/img/common/favicon-48x48.ico?ver=201907101203" sizes="48x48">
@@ -11,477 +12,115 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" integrity="sha256-BtbhCIbtfeVWGsqxk1vOHEYXS6qcvQvLMZqjtpWUEx8=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://static.printinglab.my/css/plan-b/style.css?ver=201907101203">
 
+  <link rel="stylesheet" href="style.css">
+
   <title>DesignLab Prototype</title>
 
   <script src="https://static.printinglab.my/vendor/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
-  <style>
-     body {
-       width: 100%;
-       height: 100%;
-     }
-
-     .section-content {
-       width: 100%;
-       overflow: hidden;
-     }
-  </style>
-  <nav class="navbar navbar-light" style="background-color: #ff633e;">
+  <nav class="navbar navbar-light">
     <div class="container">
       <a class="navbar-brand p-sm-0" href="#">
-        <!--- https://www.flaticon.com/free-icon/layers_1589476 --->
-        <img src="https://image.flaticon.com/icons/svg/1589/1589476.svg" width="26" height="26" alt="">
+        <!-- https://www.flaticon.com/free-icon/layers_1589476 -->
+        <img src="https://image.flaticon.com/icons/svg/1589/1589476.svg" width="26" height="26" alt="DesignLab">
         <span class="text-white font-weight-bold ml-1">DesignLab</span>
       </a>
     </div>
   </nav>
 
-  <div class="js__section-content section-content d-flex justify-content-center py-3">
-    <!--- Select Product --->
+  <div class="section-content d-flex justify-content-center py-3">
+    <!-- STEP 1: Select Product -->
     <div class="content" id="product">
       <div class="container p-3">
         <h5 class="text-center mb-4">Choose a Product</h5>
         <div class="row px-3">
+          <!-- Business card -->
           <div class="col-12">
-            <style>
-              .hoverable-card {
-                background-color: #f2f2f8;
-                border: 4px solid #f2f2f8;
-                transition: border 0.15s ease-in-out
-              }
-              .hoverable-card:hover {
-                cursor: pointer;
-                border: 4px solid #eaeaf7
-              }
-            </style>
             <div class="hoverable-card card h-100" data-toggle="artwork">
-              <!--- https://www.flaticon.com/free-icon/card_1965661#term=business%20card&page=2&position=89 --->
-              <!--- https://www.flaticon.com/free-icon/flyers_1042391#term=flyer&page=1&position=22 --->
+              <!-- https://www.flaticon.com/free-icon/card_1965661#term=business%20card&page=2&position=89 -->
+              <!-- https://www.flaticon.com/free-icon/flyers_1042391#term=flyer&page=1&position=22 -->
               <img class="img-fluid mx-3 mt-2" src="https://image.flaticon.com/icons/svg/1965/1965661.svg">
               <button class="btn btn-link mt-auto font-weight-bold text-dark text-decoration-none">Business Card</button>
             </div>
-          </div>
+          </div><!--// Business card -->
+
+          <!-- Flyer/Poster -->
           <div class="col-12">
             <div class="hoverable-card card h-100" data-toggle="artwork">
-              <!--- https://www.flaticon.com/free-icon/flyer_601222#term=flyer&page=1&position=55 --->
+              <!-- https://www.flaticon.com/free-icon/flyer_601222#term=flyer&page=1&position=55 -->
               <img class="img-fluid mx-3 mt-2" src="https://image.flaticon.com/icons/svg/601/601222.svg">
               <button class="btn btn-link mt-auto font-weight-bold text-dark text-decoration-none">Flyer/Poster</button>
             </div>
-          </div>
+          </div><!--// Flyer/Poster -->
+
+          <!-- Bunting/Banner -->
           <div class="col-12 mt-3">
             <div class="hoverable-card card h-100" data-toggle="artwork">
-              <!--- https://www.flaticon.com/free-icon/roll-up_1466302#term=banner&page=2&position=96 --->
+              <!-- https://www.flaticon.com/free-icon/roll-up_1466302#term=banner&page=2&position=96 -->
               <img class="img-fluid mx-3 mt-2" src="https://image.flaticon.com/icons/svg/1466/1466302.svg">
               <button class="btn btn-link mt-auto font-weight-bold text-dark text-decoration-none">Bunting/Banner</button>
             </div>
-          </div>
+          </div><!--// Bunting/Banner -->
+
+          <!-- T-Shirt -->
           <div class="col-12 mt-3">
             <div class="hoverable-card card h-100" data-toggle="artwork">
-              <!--- https://www.flaticon.com/free-icon/shirt_413524#term=TShirt&page=1&position=9 --->
+              <!-- https://www.flaticon.com/free-icon/shirt_413524#term=TShirt&page=1&position=9 -->
               <img class="img-fluid mx-3 mt-2" src="https://image.flaticon.com/icons/svg/413/413422.svg">
               <button class="btn btn-link mt-auto font-weight-bold text-dark text-decoration-none">T-Shirt</button>
             </div>
-          </div>
+          </div><!--// T-Shirt -->
+
         </div>
       </div>
-      <script>
-        $(function() {
-          $('[data-toggle="artwork"]').on('click', function() {
-            $('#product').fadeOut('fast', function() {
-              $(this).addClass('d-none');
-              $('#artwork').fadeIn('slow').removeClass('d-none');
-            });
-          });
-        });
-      </script>
-    </div><!--- END Select Product --->
+    </div><!--// STEP 1: Select Product -->
 
-    <!--- Select Artwork --->
+    <!-- STEP 2: Select Artwork -->
     <div class="content d-none" id="artwork">
-      <!--- https://codepen.io/suez/pen/MaeVBy --->
+      <!-- Tinder swipe: https://codepen.io/suez/pen/MaeVBy -->
       <div class="container p-3">
         <h5 class="text-center mb-4">Choose Business Card Design</h5>
-
-        <style>
-          .artwork-cards {
-            position: relative;
-            height: 350px;
-            -webkit-user-select: none;
-               -moz-user-select: none;
-                -ms-user-select: none;
-                    user-select: none;
-          }
-
-          .artwork-card {
-            position: absolute;
-            z-index: 2;
-            height: auto;
-            overflow: hidden;
-            background-color: #f2f2f8;
-            -webkit-transform-origin: 50% 100%;
-                    transform-origin: 50% 100%;
-          }
-          .artwork-card.chosen {
-            visibility: hidden;
-          }
-          .artwork-card.reset {
-            transition: -webkit-transform 0.3s;
-            transition: transform 0.3s;
-            transition: transform 0.3s, -webkit-transform 0.3s;
-            -webkit-transform: translateX(0) !important;
-                    transform: translateX(0) !important;
-          }
-          .artwork-card.reset .artwork-card__choice {
-            transition: opacity 0.3s;
-            opacity: 0 !important;
-          }
-          .artwork-card.inactive {
-            transition: -webkit-transform 0.3s;
-            transition: transform 0.3s;
-            transition: transform 0.3s, -webkit-transform 0.3s;
-          }
-          .artwork-card.to-left {
-            -webkit-transform: translateX(-30rem) rotate(-30deg) !important;
-                    transform: translateX(-30rem) rotate(-30deg) !important;
-          }
-          .artwork-card.to-right {
-            -webkit-transform: translate(30rem) rotate(30deg) !important;
-                    transform: translate(30rem) rotate(30deg) !important;
-          }
-          .artwork-card.below {
-            z-index: 1;
-          }
-          .artwork-card__choice {
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-          }
-          .artwork-card__choice:before {
-            content: "";
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            width: 2rem;
-            height: 2rem;
-            margin-left: -1rem;
-            color: #fff;
-            border-radius: 50%;
-            box-shadow: -2rem -3rem #fff, 2rem -3rem #fff;
-          }
-          .artwork-card__choice:after {
-            content: "";
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            width: 4rem;
-            height: 1.5rem;
-            margin-left: -2rem;
-            border: 0.6rem solid #fff;
-            border-bottom: none;
-            border-top-left-radius: 1.5rem;
-            border-top-right-radius: 1.5rem;
-          }
-          .artwork-card__choice.reject {
-            background: #ff4933;
-          }
-          .artwork-card__choice.like {
-            background: #B1DA96;
-          }
-          .artwork-card__choice.like:after {
-            -webkit-transform: scaleY(-1);
-                    transform: scaleY(-1);
-          }
-          .artwork-card__drag {
-            z-index: 5;
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            cursor: -webkit-grab;
-            cursor: grab;
-          }
-
-          .artwork-card .card-title {
-            text-align: center;
-            font-weight: 500;
-            font-size: 1.125rem;
-          }
-        </style>
+        <!-- Artwork Container -->
         <div class="row">
           <div class="col-24 p-0">
             <div class="d-flex align-items-center justify-content-center position-absolute text-muted text-sm font-weight-bold border rounded w-100" style="height: 325px; background-color: #f2f2f8;">No artwork anymore...</div>
             <div class="artwork-cards w-100" id="artworks"></div>
           </div>
-          <style>
-            .rounded-btn {
-              position: relative;
-              border-radius: 100%;
-              width: 5rem;
-              height: 5rem;
-              display: inline-flex;
-              align-items: center;
-              justify-content: center;
-            }
-
-            .rounded-btn .action-icon {
-              position: absolute;
-              font-size: 2rem;
-            }
-            .rounded-btn:active .action-icon {
-              filter: contrast(1.5);
-            }
-            .rounded-btn.active .action-icon-animated {
-              transform: scale(3);
-              opacity: 0;
-              transition: all 0.3s ease;
-            }
-          </style>
-        </div>
+        </div><!--// Artwork Container -->
         <div class="text-center text-primary mt-1"><b>swipe left or right</b></div>
+        <!-- Action Panel -->
         <div class="row fixed-bottom mb-5">
+          <!-- Reject Button -->
           <div class="col-9 text-right">
             <button class="js__reject-btn rounded-btn btn btn-lg btn-outline-light border text-danger shadow">
               <span class="action-icon"><i class="fas fa-times"></i></span>
               <span class="action-icon action-icon-animated"><i class="fas fa-times"></i></span>
             </button>
-          </div>
+          </div><!--// Reject Button -->
+          <!-- Artwork Counter -->
           <div class="col-6">
             <div class="d-flex align-items-center justify-content-center h-100 text-primary text-md">
               <b><span class="js__cards-counter">10</span>/10</b>
             </div>
-          </div>
+          </div><!--// Artwork Counter -->
+          <!-- Like Button -->
           <div class="col-9">
             <button class="js__like-btn rounded-btn btn btn-lg btn-outline-light border text-success shadow">
               <span class="action-icon"><i class="fas fa-heart"></i></span>
               <span class="action-icon action-icon-animated"><i class="fas fa-heart"></i></span>
             </button>
-          </div>
-        </div>
+          </div><!--// Like Button -->
+        </div><!--// Action Panel -->
       </div>
+    </div><!-- END Select Artwork -->
 
-      <script>
-        $(function() {
-          var artworks = [
-            'https://image.freepik.com/free-vector/abstract-gradient-business-card-template_52683-19400.jpg',
-            'https://image.freepik.com/free-psd/white-yellow-business-card_1435-18.jpg',
-            'https://image.freepik.com/free-psd/clean-clear_57821-74.jpg',
-            'https://image.freepik.com/free-psd/blank-business-card-design-mockup_53876-57938.jpg',
-            'https://image.freepik.com/free-psd/elegant-corporate-card_1435-1143.jpg',
-            'https://image.freepik.com/free-psd/beautiful-modern-yellow-business-card_1409-781.jpg',
-            'https://image.freepik.com/free-psd/corporate-card-template_1409-820.jpg',
-            'https://image.freepik.com/free-psd/stylish-business-card_103713-67.jpg',
-            'https://image.freepik.com/free-psd/corporate-business-card_98870-31.jpg',
-            'https://image.freepik.com/free-psd/orange-elegant-corporate-card_1409-767.jpg'
-          ];
-
-          $.each(artworks, function(i, artwork) {
-            var html =
-              '<div class="artwork-card card shadow-sm border-0" data-artwork="'+i+'">'
-              + '  <div class="card-img-top">'
-              + '    <img class="img-fluid" src="'+artwork+'">'
-              + '  </div>'
-              + '  <div class="card-title p-3">Some Description...</div>'
-              + '  <div class="artwork-card__choice reject"></div>'
-              + '  <div class="artwork-card__choice like"></div>'
-              + '  <div class="artwork-card__drag"></div>'
-              + '</div>'
-
-            $('#artworks').append(html);
-          });
-
-          var animating = false;
-          var cardsCounter = 0;
-          var numOfCards = 10;
-          var decisionVal = 80;
-          var pullDeltaX = 0;
-          var deg = 0;
-          var $card, $cardReject, $cardLike;
-
-          var liked = [];
-          var rejected = [];
-
-          function pullChange() {
-            animating = true;
-            deg = pullDeltaX / 10;
-            $card.css("transform", "translateX("+ pullDeltaX +"px) rotate("+ deg +"deg)");
-
-            var opacity = pullDeltaX / 100;
-            var rejectOpacity = (opacity >= 0) ? 0 : Math.abs(opacity);
-            var likeOpacity = (opacity <= 0) ? 0 : opacity;
-            $cardReject.css("opacity", rejectOpacity);
-            $cardLike.css("opacity", likeOpacity);
-          };
-
-          function release() {
-            /* Swipe Right - Like */
-            if (pullDeltaX >= decisionVal) {
-              $card.addClass("to-right chosen");
-              liked.push($card);
-
-              $('.js__like-btn').addClass('active');
-              setTimeout(function() {
-                $('.js__like-btn').removeClass('active');
-              }, 300);
-
-            /* Swipe Left - Reject */
-            } else if (pullDeltaX <= -decisionVal) {
-              $card.addClass("to-left chosen");
-              rejected.push($card);
-
-              $('.js__reject-btn').addClass('active');
-              setTimeout(function() {
-                $('.js__reject-btn').removeClass('active');
-              }, 300);
-            }
-
-            if (Math.abs(pullDeltaX) >= decisionVal) {
-              $card.addClass("inactive");
-
-              setTimeout(function() {
-                $card.addClass("below").removeClass("inactive to-left to-right");
-                cardsCounter++;
-                if (cardsCounter === numOfCards) {
-                  $.each(liked, function(i, card) {
-                    var artwork = $(card).find('img').attr('src');
-                    var html = '<div class="favourite col-12">'
-                    + '  <div class="hoverable-card card h-100" data-toggle="favourite">'
-                    + '    <img class="img-fluid mx-3 mt-2" src="'+artwork+'">'
-                    + '    <button class="btn btn-link mt-auto font-weight-bold text-dark text-decoration-none">Description</button>'
-                    + '  </div>'
-                    + '</div>';
-
-                    $('#favourites').append(html)
-                  });
-                  /* cardsCounter = 0; */
-                  /* $(".artwork-card").removeClass("below"); */
-                  $('#artwork').fadeOut('fast', function() {
-                    $(this).addClass('d-none');
-                    $('#favourite').fadeIn('slow').removeClass('d-none');
-                  });
-                }
-
-                $('.js__cards-counter').html(numOfCards-cardsCounter);
-              }, 300);
-            }
-
-            if (Math.abs(pullDeltaX) < decisionVal) {
-              $card.addClass("reset");
-            }
-
-            setTimeout(function() {
-              $card.attr("style", "").removeClass("reset")
-                .find(".artwork-card__choice").attr("style", "");
-
-              pullDeltaX = 0;
-              animating = false;
-            }, 300);
-          };
-
-          $('.js__like-btn').on('click', function() {
-            if (animating) return;
-            swipeByClick('like');
-          });
-
-          $('.js__reject-btn').on('click', function() {
-            if (animating) return;
-            swipeByClick('reject');
-          });
-
-          function swipeByClick(action) {
-            /* Get the front most card */
-            $('#artworks').children(':not(.chosen)').each(function() {
-              $card = $(this);
-            });
-
-            $cardReject = $(".artwork-card__choice.reject", $card);
-            $cardLike = $(".artwork-card__choice.like", $card);
-            var startX =  $(document).width()/2;
-            var x = startX;
-
-            /* Simulate drag action */
-            function loopAnimation() {
-              setTimeout(function() {
-                if (action === 'like') x += 50;
-                if (action === 'reject') x -= 50;
-
-                pullDeltaX = (x - startX);
-
-                if (!pullDeltaX) return;
-                if (cardsCounter === numOfCards) return;
-
-                pullChange();
-
-                var offscreenWidth;
-                if (action === 'like') offscreenWidth = $(document).width();
-                if (action === 'reject') offscreenWidth = -($(document).width()/2);
-
-                if (action === 'like' && x < offscreenWidth) {
-                  loopAnimation();
-                  return;
-                }
-
-                if (action === 'reject' && x > offscreenWidth) {
-                  loopAnimation();
-                  return;
-                }
-
-                release();
-              }, 100);
-            }
-
-            loopAnimation();
-          }
-
-          $(document).on("mousedown touchstart", ".artwork-card:not(.inactive)", function(e) {
-            if (animating) return;
-
-            $card = $(this);
-            $cardReject = $(".artwork-card__choice.reject", $card);
-            $cardLike = $(".artwork-card__choice.like", $card);
-            var startX =  e.pageX || e.originalEvent.touches[0].pageX;
-
-            $(document).on("mousemove touchmove", function(e) {
-              var x = e.pageX || e.originalEvent.touches[0].pageX;
-              pullDeltaX = (x - startX);
-              if (!pullDeltaX) return;
-              if (cardsCounter === numOfCards) return;
-              pullChange();
-            });
-
-            $(document).on("mouseup touchend", function() {
-              $(document).off("mousemove touchmove mouseup touchend");
-              if (!pullDeltaX) return; /* prevents from rapid click events */
-              release();
-            });
-          });
-
-        });
-      </script>
-    </div><!--- END Select Artwork --->
-
-    <!--- Choose Favourite --->
+    <!-- STEP 3: Choose Favourite -->
     <div class="content d-none" id="favourite">
-      <style>
-        .favourite + .favourite {
-          margin-top: 1.5rem;
-        }
-        .favourite:nth-of-type(2) {
-          margin-top: 0;
-        }
-
-        .favourite .hoverable-card.active {
-          border: 4px solid #ff633e;
-        }
-      </style>
       <div class="container p-3">
         <h5 class="text-center mb-4">Choose The Most Favourite</h5>
-
-        <div class="row mb-5" id="favourites"></div>
+        <!-- Liked Artwork Container -->
+        <div class="row mb-5" id="favourites"></div><!--// Liked Artwork Container -->
 
         <div class="row fixed-bottom mb-3">
           <div class="col-18 mx-auto">
@@ -489,30 +128,9 @@
           </div>
         </div>
       </div>
+    </div><!--// STEP 3: Choose Favourite -->
 
-      <script>
-        $(function() {
-          $('#favourites').on('click', '[data-toggle="favourite"]', function() {
-            $('[data-toggle="favourite"]').removeClass('active');
-            $(this).addClass('active');
-          });
-
-          $('.js__save-favourite-btn').on('click', function() {
-            var chosen = $('#favourites').find('.active');
-            if (typeof chosen === 'undefined' || chosen.length === 0) {
-              alert('Please choose the most favourite artwork!')
-              return;
-            }
-
-            $('#favourite').fadeOut('fast', function() {
-              $(this).addClass('d-none');
-              $('#completed').fadeIn('slow').removeClass('d-none');
-            });
-          });
-        });
-      </script>
-    </div><!--- END Choose Favourite --->
-
+    <!-- Mission Completed -->
     <div class="content d-none" id="completed">
       <div class="container p-3 text-center">
         <div class="row mt-5">
@@ -523,13 +141,11 @@
           <div class="col-10 mx-auto d-none"><button class="js__start-again-btn btn btn-primary btn-block">Start Over</button></div>
         </div>
       </div>
-    </div>
+    </div><!--// Mission Completed -->
 
   </div>
 
-
-
-  <!---
+  <!--
     https://www.flaticon.com/free-icon/layers_148862#term=design&page=1&position=31
     https://image.flaticon.com/icons/svg/148/148862.svg
 
@@ -541,9 +157,10 @@
 
     https://www.flaticon.com/free-icon/artwork_1643870#term=artwork&page=1&position=43
     https://image.flaticon.com/icons/svg/1643/1643870.svg
-  --->
+  -->
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="app.js"></script>
 </body>
 </html>
