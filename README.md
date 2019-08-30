@@ -4,7 +4,7 @@ A project to allow clients to swipe-choosing their favourite designs (Tinder Swi
 
 *Currently only done the user interface*
 
-# Notes
+## Notes
 ### A. User Profile
 1. Design Buckets (Favourite designs)
 2. Starred Designers (Favourite designers or those who have cooperated)
