@@ -18,4 +18,4 @@ A project to allow clients to swipe-choosing their favourite designs (Tinder Swi
 1. Analyse user's chosen designs & paid designs
 2. Guess and assign user's traits
 3. Based on the traits, match them with the suitable designer (whose traits also being analysed based on their portfolio)
-4. Increase the accuracy
+4. Increase the accuracy - data analysis
