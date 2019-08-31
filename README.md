@@ -1,6 +1,6 @@
 # DesignLab Prototype
  
-A project to allow clients to swipe-choosing their favourite designs (Tinder Swipe) and pair them with suitable designer to be hired to get their design done.
+A project that allows clients to swipe-choosing their favourite designs (Tinder Swipe) and pair them with suitable designer to be hired to get their design done.
 
 *Currently only done the mobile app user interface*
 
